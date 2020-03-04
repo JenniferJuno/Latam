@@ -14,12 +14,15 @@ import org.springframework.stereotype.Service;
 
 import cl.desafio.latam.json.request.PersonaRequest;
 import cl.desafio.latam.json.response.PersonaResponse;
+import cl.desafio.latam.json.request.PersonaRequestRepository;
 
 @Service
 public class IngresoServiceImpl implements IngresoService {
-
-	private static final Logger log = LoggerFactory.getLogger(IngresoServiceImpl.class);
+	@Autowired
+    private PersonaRequestRepository repository;
 	
+	private static final Logger log = LoggerFactory.getLogger(IngresoServiceImpl.class);
+
 	@Autowired
 	private PoemaService poemaService;
 
@@ -27,16 +30,19 @@ public class IngresoServiceImpl implements IngresoService {
 	@Override
 	public PersonaResponse ingresoPersona(PersonaRequest personaReq) {
 		log.info("[ INICIO - ingresoPersona ]");
-
+			
+		
 		PersonaResponse persona = new PersonaResponse();
 		String poema;
+		
+		repository.save(personaReq);
 
 		persona.setNombre(personaReq.getNombre());
 		persona.setApellido(personaReq.getApellido());
 		
 		Date fecha;
 		try {
-			fecha = new SimpleDateFormat("yyyy-MM-dd").parse(personaReq.getFecha());
+			fecha = new SimpleDateFormat("dd-MM-yyyy").parse(personaReq.getFecha());
 		} catch (ParseException e) {
 			fecha = null;
 			e.printStackTrace();
@@ -60,6 +66,7 @@ public class IngresoServiceImpl implements IngresoService {
 		}
 
 		log.info("[ FIN - ingresoPersona ]");
+		
 		return persona;
 	}
 

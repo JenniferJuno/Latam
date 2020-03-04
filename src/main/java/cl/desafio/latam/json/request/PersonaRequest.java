@@ -1,7 +1,15 @@
 package cl.desafio.latam.json.request;
 
-public class PersonaRequest {
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Persona")
+public class PersonaRequest {
+	
+	@Id
+    private String id;
 	private String nombre;
 	private String apellido;
 	private String fecha;
