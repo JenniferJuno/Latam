@@ -7,12 +7,11 @@ Proyecto desafio latam - api rest springboot
 
 #Dependencias
 
-Para instalar las dependencias usar el siguiente comando:
 
-JDK 1.8 or later
-or Maven 3.2+
-Spring Tool Suite (STS)
-Mongodb
+*JDK 1.8 or later
+*Maven 3.2+
+*Spring Tool Suite (STS)
+*Mongodb
 
 
 #DESAFIO LATAM
