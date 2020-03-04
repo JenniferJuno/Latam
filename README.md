@@ -10,7 +10,7 @@ Proyecto desafio latam - api rest springboot
 Para instalar las dependencias usar el siguiente comando:
 
 JDK 1.8 or later
-Gradle 4+ or Maven 3.2+
+or Maven 3.2+
 Spring Tool Suite (STS)
 
 
@@ -18,15 +18,22 @@ Spring Tool Suite (STS)
 
 Proyecto desafio LATAM (API Rest Java).
 
-#DEPLOY
+#DEPLOY mongodb
 
-Postman archivo postman.txt
+Postman archivo postmanMong.txt test mongodb
+Postman archivo postmanFunc.txt test function
 
 	
 Importar proyecto como maven en Spring Tool Suite
-	Ejecutar LatamApplication.java como Spring Boot App
+Ejecutar LatamApplication.java como Spring Boot App
   
   guia oficial instalacion: https://spring.io/guides/gs/rest-service/
+  
+  cargar proyecto, ejecutar como springboot
+  
+  Repositorio Git: https://github.com/JenniferJuno/Latam
+
+sin ejecutable, respuesta por postman. respuesta mongodb
 
 
 
